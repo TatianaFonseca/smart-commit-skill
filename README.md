@@ -16,20 +16,21 @@ A Claude Code skill that generates conventional commit messages following the [C
 
 Simple change:
 ```
-fix(voucher): restrict DeunaVeci rendering to CNB schema only
+fix(auth): redirect to login when session expires
 ```
 
 Multiple unrelated changes staged → proposes split:
 ```
-1. build(android): upgrade compileSdkVersion to 34
-2. chore(deps): bump react-native-camera and axios
+1. build(ios): upgrade deployment target to iOS 16
+2. chore(deps): bump react-navigation and lodash
 ```
 
 Change with a non-obvious reason:
 ```
-fix(voucher): restrict DeunaVeci rendering to CNB schema only
+feat(checkout): disable coupon field for guest users
 
-DeunaVeci was appearing in non-CNB flows, breaking business rules.
+Guest users don't have an account to validate coupons against,
+so the field was causing silent failures on submission.
 ```
 
 ## Installation
